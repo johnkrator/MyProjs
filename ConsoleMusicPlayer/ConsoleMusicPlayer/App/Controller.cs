@@ -17,8 +17,6 @@ namespace ConsoleMusicPlayer.App
             InitializedData();
             CheckUsernameAndPassword();
             Welcome();
-
-            Utility.PressEnterToContinue();
         }
 
         public void Welcome()
