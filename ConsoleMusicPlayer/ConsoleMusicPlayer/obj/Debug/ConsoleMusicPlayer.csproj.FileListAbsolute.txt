@@ -1,0 +1,7 @@
+C:\Users\John\Documents\MY PROJECTS\ConsoleMusicPlayer\ConsoleMusicPlayer\bin\Debug\ConsoleMusicPlayer.exe
+C:\Users\John\Documents\MY PROJECTS\ConsoleMusicPlayer\ConsoleMusicPlayer\bin\Debug\ConsoleMusicPlayer.pdb
+C:\Users\John\Documents\MY PROJECTS\ConsoleMusicPlayer\ConsoleMusicPlayer\obj\Debug\ConsoleMusicPlayer.csproj.AssemblyReference.cache
+C:\Users\John\Documents\MY PROJECTS\ConsoleMusicPlayer\ConsoleMusicPlayer\obj\Debug\ConsoleMusicPlayer.csproj.SuggestedBindingRedirects.cache
+C:\Users\John\Documents\MY PROJECTS\ConsoleMusicPlayer\ConsoleMusicPlayer\obj\Debug\ConsoleMusicPlayer.csproj.CoreCompileInputs.cache
+C:\Users\John\Documents\MY PROJECTS\ConsoleMusicPlayer\ConsoleMusicPlayer\obj\Debug\ConsoleMusicPlayer.exe
+C:\Users\John\Documents\MY PROJECTS\ConsoleMusicPlayer\ConsoleMusicPlayer\obj\Debug\ConsoleMusicPlayer.pdb
