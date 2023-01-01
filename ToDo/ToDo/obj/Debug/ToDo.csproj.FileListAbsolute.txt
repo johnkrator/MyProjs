@@ -1,0 +1,7 @@
+C:\Users\John\Documents\PERSONAL PROJECTS\ToDo\ToDo\bin\Debug\ToDo.exe
+C:\Users\John\Documents\PERSONAL PROJECTS\ToDo\ToDo\bin\Debug\ToDo.pdb
+C:\Users\John\Documents\PERSONAL PROJECTS\ToDo\ToDo\obj\Debug\ToDo.csproj.AssemblyReference.cache
+C:\Users\John\Documents\PERSONAL PROJECTS\ToDo\ToDo\obj\Debug\ToDo.csproj.SuggestedBindingRedirects.cache
+C:\Users\John\Documents\PERSONAL PROJECTS\ToDo\ToDo\obj\Debug\ToDo.csproj.CoreCompileInputs.cache
+C:\Users\John\Documents\PERSONAL PROJECTS\ToDo\ToDo\obj\Debug\ToDo.exe
+C:\Users\John\Documents\PERSONAL PROJECTS\ToDo\ToDo\obj\Debug\ToDo.pdb

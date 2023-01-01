@@ -1,0 +1,7 @@
+C:\Users\John\Documents\PERSONAL PROJECTS\NoteTakingApp\NoteTakingApp\bin\Debug\NoteTakingApp.exe
+C:\Users\John\Documents\PERSONAL PROJECTS\NoteTakingApp\NoteTakingApp\bin\Debug\NoteTakingApp.pdb
+C:\Users\John\Documents\PERSONAL PROJECTS\NoteTakingApp\NoteTakingApp\obj\Debug\NoteTakingApp.csproj.AssemblyReference.cache
+C:\Users\John\Documents\PERSONAL PROJECTS\NoteTakingApp\NoteTakingApp\obj\Debug\NoteTakingApp.csproj.SuggestedBindingRedirects.cache
+C:\Users\John\Documents\PERSONAL PROJECTS\NoteTakingApp\NoteTakingApp\obj\Debug\NoteTakingApp.csproj.CoreCompileInputs.cache
+C:\Users\John\Documents\PERSONAL PROJECTS\NoteTakingApp\NoteTakingApp\obj\Debug\NoteTakingApp.exe
+C:\Users\John\Documents\PERSONAL PROJECTS\NoteTakingApp\NoteTakingApp\obj\Debug\NoteTakingApp.pdb
