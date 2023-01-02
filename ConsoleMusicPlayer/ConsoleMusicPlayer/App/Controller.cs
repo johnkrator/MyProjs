@@ -184,7 +184,6 @@ namespace ConsoleMusicPlayer.App
             {
                 Console.WriteLine("\nHint: index starts at 0");
                 Console.Write("Enter song number index: ");
-
                 var index = int.Parse(Console.ReadLine());
 
                 Console.Write("Enter the new name of song to be updated: ");
