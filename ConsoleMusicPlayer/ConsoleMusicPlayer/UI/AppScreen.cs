@@ -57,6 +57,15 @@ namespace ConsoleMusicPlayer.UI
             Console.WriteLine("");
         }
 
+        internal static void DisplaySongsGenre()
+        {
+            Console.WriteLine("1. Raggae");
+            Console.WriteLine("2. Rap");
+            Console.WriteLine("3. HipHop");
+            Console.WriteLine("4. Afro");
+            Console.WriteLine("");
+        }
+
         internal static void LogoutProgress()
         {
             Console.WriteLine("Thank you for using our app.");

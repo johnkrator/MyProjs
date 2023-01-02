@@ -7,11 +7,12 @@ using ConsoleMusicPlayer.UI;
 
 namespace ConsoleMusicPlayer.App
 {
-    public class Controller : UserAccount, IUserLogin, IUserPrivileges
+    public class Controller : UserAccount, IUserLogin, IUserPrivileges, ISongsGenre
     {
         private List<UserAccount> _userAccountList;
         private UserAccount _selectedAccount;
-        private List<string> songs = new List<string>();
+        private List<string> _songs = new List<string>();
+        private List<string> _songsGenre = new List<string>();
 
         public void Run()
         {
@@ -95,10 +96,10 @@ namespace ConsoleMusicPlayer.App
                     UserAction();
                     break;
                 case (int)UserOptions.CreatePlaylist:
-                    Console.WriteLine("Creating a playlist");
+                    SongsGenre();
                     break;
                 case (int)UserOptions.ViewPlaylist:
-                    Console.WriteLine("Viewing playlist");
+                    DisplayPlayList();
                     break;
                 case (int)UserOptions.Logout:
                     AppScreen.LogoutProgress();
@@ -135,6 +136,30 @@ namespace ConsoleMusicPlayer.App
             }
         }
 
+        public void SongsGenre()
+        {
+            Console.Clear();
+            AppScreen.DisplaySongsGenre();
+            switch (Validator.Convert<int>("an option: "))
+            {
+                case (int)SongGenre.Raggae:
+                    AddRaggaeSong();
+                    break;
+                case (int)SongGenre.Rap:
+                    AddRapSong();
+                    break;
+                case (int)SongGenre.HipHop:
+                    AddHipHopSong();
+                    break;
+                case (int)SongGenre.Afro:
+                    AddAfroSong();
+                    break;
+                default:
+                    Utility.PrintMessage("Invalid Option. Please check and try again", false);
+                    break;
+            }
+        }
+
         // User privileges
         public void AddSong()
         {
@@ -143,12 +168,13 @@ namespace ConsoleMusicPlayer.App
                 Console.Write("\nPlease enter a song title and name of artist: ");
                 var songDescriptor = Console.ReadLine();
 
-                songs.Add(songDescriptor);
+                _songs.Add(songDescriptor);
                 Utility.PrintMessage($"{songDescriptor} was added successfully.", true);
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
+                throw;
             }
         }
 
@@ -164,12 +190,13 @@ namespace ConsoleMusicPlayer.App
                 Console.Write("Enter the new name of song to be updated: ");
                 var updatedSong = Console.ReadLine();
 
-                songs[index] = updatedSong;
+                _songs[index] = updatedSong;
                 Utility.PrintMessage($"{updatedSong} was successfully updated.", true);
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
+                throw;
             }
         }
 
@@ -181,12 +208,13 @@ namespace ConsoleMusicPlayer.App
                 Console.Write("Enter the index of the song to be delete: ");
                 var index = int.Parse(Console.ReadLine());
 
-                songs.RemoveAt(index);
+                _songs.RemoveAt(index);
                 Utility.PrintMessage($"The song at index {index} was successfully deleted.", true);
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
+                throw;
             }
         }
 
@@ -195,7 +223,7 @@ namespace ConsoleMusicPlayer.App
             try
             {
                 Console.WriteLine("\nYour Songs:");
-                foreach (var song in songs)
+                foreach (var song in _songs)
                 {
                     Console.WriteLine($"-> {song}");
                 }
@@ -203,6 +231,81 @@ namespace ConsoleMusicPlayer.App
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
+                throw;
+            }
+        }
+
+        // Raggae
+        public void AddRaggaeSong()
+        {
+            try
+            {
+                Console.Write("\nAdd songs: ");
+                var raggae = Console.ReadLine();
+                _songsGenre.Add(raggae);
+                Utility.PrintMessage($"{raggae} was successfully added.", true);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                throw;
+            }
+        }
+
+        public void AddRapSong()
+        {
+            try
+            {
+                Console.Write("\nAdd songs: ");
+                var rap = Console.ReadLine();
+                _songsGenre.Add(rap);
+                Utility.PrintMessage($"{rap} was successfully added.", true);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                throw;
+            }
+        }
+
+        public void AddHipHopSong()
+        {
+            try
+            {
+                Console.Write("\nAdd songs: ");
+                var hip = Console.ReadLine();
+                _songsGenre.Add(hip);
+                Utility.PrintMessage($"{hip} was successfully added.", true);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                throw;
+            }
+        }
+
+        public void AddAfroSong()
+        {
+            try
+            {
+                Console.Write("Add songs: ");
+                var afro = Console.ReadLine();
+                _songsGenre.Add(afro);
+                Utility.PrintMessage($"{afro} was successfully added.", true);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                throw;
+            }
+        }
+
+        public void DisplayPlayList()
+        {
+            Console.WriteLine("\nYour songs: ");
+            foreach (var song in _songsGenre)
+            {
+                Console.WriteLine($"-> {song}");
             }
         }
     }

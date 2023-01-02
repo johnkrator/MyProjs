@@ -42,8 +42,10 @@
         <Compile Include="App\Controller.cs" />
         <Compile Include="App\Program.cs" />
         <Compile Include="Domain\Entities\UserAccount.cs" />
+        <Compile Include="Domain\Enums\SongGenre.cs" />
         <Compile Include="Domain\Enums\UserActions.cs" />
         <Compile Include="Domain\Enums\UserOptions.cs" />
+        <Compile Include="Domain\Interfaces\ISongsGenre.cs" />
         <Compile Include="Domain\Interfaces\IUserLogin.cs" />
         <Compile Include="Domain\Interfaces\IUserPrivileges.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
