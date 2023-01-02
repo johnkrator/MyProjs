@@ -4,6 +4,7 @@ namespace ConsoleMusicPlayer.Domain.Enums
     {
         Add = 1,
         Edit,
-        Delete
+        Delete,
+        DisplayAllSongs
     }
 }

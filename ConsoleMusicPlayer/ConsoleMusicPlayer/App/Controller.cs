@@ -11,6 +11,7 @@ namespace ConsoleMusicPlayer.App
     {
         private List<UserAccount> _userAccountList;
         private UserAccount _selectedAccount;
+        private List<string> songs = new List<string>();
 
         public void Run()
         {
@@ -37,7 +38,7 @@ namespace ConsoleMusicPlayer.App
             _userAccountList = new List<UserAccount>
             {
                 new UserAccount
-                    { Id = 1, FullName = "James Oma", Username = "@james", Password = 123456, IsLocked = false },
+                    { Id = 1, FullName = "James Oma", Username = "@james", Password = 112233, IsLocked = false },
                 new UserAccount
                     { Id = 2, FullName = "Mutari Ahmed", Username = "@muktari", Password = 09876, IsLocked = true }
             };
@@ -100,8 +101,9 @@ namespace ConsoleMusicPlayer.App
                     Console.WriteLine("Viewing playlist");
                     break;
                 case (int)UserOptions.Logout:
-                    Console.WriteLine("Logging out");
-                    Utility.PrintDotAnimation();
+                    AppScreen.LogoutProgress();
+                    Utility.PrintMessage("You have successfully logged out.", true);
+                    Run();
                     break;
                 default:
                     Utility.PrintMessage("Invlid Option. Please try again.", false);
@@ -116,34 +118,92 @@ namespace ConsoleMusicPlayer.App
             switch (Validator.Convert<int>("an option to continue: "))
             {
                 case (int)UserActions.Add:
-                    Console.WriteLine("addeing a song...");
+                    AddSong();
                     break;
                 case (int)UserActions.Edit:
-                    Console.WriteLine("Editing a song...");
+                    EditSong();
                     break;
                 case (int)UserActions.Delete:
-                    Console.WriteLine("Deleting a song...");
+                    DeleteSong();
+                    break;
+                case (int)UserActions.DisplayAllSongs:
+                    DisplaySongs();
                     break;
                 default:
-                    Utility.PrintMessage("Invalid Option. Please try a again");
+                    Utility.PrintMessage("Invalid Option. Please try a again", false);
                     break;
             }
         }
 
         // User privileges
-        public void Add()
+        public void AddSong()
         {
-            throw new NotImplementedException();
+            try
+            {
+                Console.Write("\nPlease enter a song title and name of artist: ");
+                var songDescriptor = Console.ReadLine();
+
+                songs.Add(songDescriptor);
+                Utility.PrintMessage($"{songDescriptor} was added successfully.", true);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
 
-        public void Edit()
+        public void EditSong()
         {
-            throw new NotImplementedException();
+            try
+            {
+                Console.WriteLine("\nHint: index starts at 0");
+                Console.Write("Enter song number index: ");
+
+                var index = int.Parse(Console.ReadLine());
+
+                Console.Write("Enter the new name of song to be updated: ");
+                var updatedSong = Console.ReadLine();
+
+                songs[index] = updatedSong;
+                Utility.PrintMessage($"{updatedSong} was successfully updated.", true);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
 
-        public void Delete()
+        public void DeleteSong()
         {
-            throw new NotImplementedException();
+            try
+            {
+                Console.WriteLine("\nHint: index starts at 0");
+                Console.Write("Enter the index of the song to be delete: ");
+                var index = int.Parse(Console.ReadLine());
+
+                songs.RemoveAt(index);
+                Utility.PrintMessage($"The song at index {index} was successfully deleted.", true);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        public void DisplaySongs()
+        {
+            try
+            {
+                Console.WriteLine("\nYour Songs:");
+                foreach (var song in songs)
+                {
+                    Console.WriteLine($"-> {song}");
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
     }
 }

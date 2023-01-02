@@ -53,7 +53,15 @@ namespace ConsoleMusicPlayer.UI
             Console.WriteLine("1. Add a new song");
             Console.WriteLine("2. Edit a song");
             Console.WriteLine("3. Delete a song");
+            Console.WriteLine("4. Display songs");
             Console.WriteLine("");
+        }
+
+        internal static void LogoutProgress()
+        {
+            Console.WriteLine("Thank you for using our app.");
+            Utility.PrintDotAnimation();
+            Console.Clear();
         }
     }
 }
