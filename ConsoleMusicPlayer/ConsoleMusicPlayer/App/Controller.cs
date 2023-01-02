@@ -1,12 +1,13 @@
 using System;
 using System.Collections.Generic;
 using ConsoleMusicPlayer.Domain.Entities;
+using ConsoleMusicPlayer.Domain.Enums;
 using ConsoleMusicPlayer.Domain.Interfaces;
 using ConsoleMusicPlayer.UI;
 
 namespace ConsoleMusicPlayer.App
 {
-    public class Controller : UserAccount, IUserLogin
+    public class Controller : UserAccount, IUserLogin, IUserPrivileges
     {
         private List<UserAccount> _userAccountList;
         private UserAccount _selectedAccount;
@@ -17,6 +18,11 @@ namespace ConsoleMusicPlayer.App
             InitializedData();
             CheckUsernameAndPassword();
             Welcome();
+            while (true)
+            {
+                AppScreen.DisplayMenuOptions();
+                PressMenuOption();
+            }
         }
 
         public void Welcome()
@@ -78,6 +84,66 @@ namespace ConsoleMusicPlayer.App
 
                 Console.Clear();
             }
+        }
+
+        public void PressMenuOption()
+        {
+            switch (Validator.Convert<int>("an option: "))
+            {
+                case (int)UserOptions.UserAction:
+                    UserAction();
+                    break;
+                case (int)UserOptions.CreatePlaylist:
+                    Console.WriteLine("Creating a playlist");
+                    break;
+                case (int)UserOptions.ViewPlaylist:
+                    Console.WriteLine("Viewing playlist");
+                    break;
+                case (int)UserOptions.Logout:
+                    Console.WriteLine("Logging out");
+                    Utility.PrintDotAnimation();
+                    break;
+                default:
+                    Utility.PrintMessage("Invlid Option. Please try again.", false);
+                    break;
+            }
+        }
+
+        public void UserAction()
+        {
+            Console.Clear();
+            AppScreen.DisplayUserActions();
+            switch (Validator.Convert<int>("an option to continue: "))
+            {
+                case (int)UserActions.Add:
+                    Console.WriteLine("addeing a song...");
+                    break;
+                case (int)UserActions.Edit:
+                    Console.WriteLine("Editing a song...");
+                    break;
+                case (int)UserActions.Delete:
+                    Console.WriteLine("Deleting a song...");
+                    break;
+                default:
+                    Utility.PrintMessage("Invalid Option. Please try a again");
+                    break;
+            }
+        }
+
+        // User privileges
+        public void Add()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Edit()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete()
+        {
+            throw new NotImplementedException();
         }
     }
 }

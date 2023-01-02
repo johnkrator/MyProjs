@@ -26,6 +26,7 @@ namespace ConsoleMusicPlayer.UI
 
         internal static void LoginProgress()
         {
+            Console.WriteLine("\nChecking username and password.");
             Utility.PrintDotAnimation();
         }
 
@@ -35,6 +36,24 @@ namespace ConsoleMusicPlayer.UI
             Utility.PrintMessage("Oops. Your account has blocked.", false);
             Utility.PressEnterToContinue();
             Environment.Exit(1);
+        }
+
+        internal static void DisplayMenuOptions()
+        {
+            Console.WriteLine("");
+            Console.WriteLine("1. User Action");
+            Console.WriteLine("2. Create a Playlist");
+            Console.WriteLine("3. View Playlist");
+            Console.WriteLine("4. Logout");
+            Console.WriteLine("");
+        }
+
+        internal static void DisplayUserActions()
+        {
+            Console.WriteLine("1. Add a new song");
+            Console.WriteLine("2. Edit a song");
+            Console.WriteLine("3. Delete a song");
+            Console.WriteLine("");
         }
     }
 }

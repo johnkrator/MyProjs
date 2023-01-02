@@ -86,8 +86,6 @@ namespace ConsoleMusicPlayer.UI
 
         public static void PrintDotAnimation(int timer = 10)
         {
-            Console.WriteLine("\nChecking username and password.");
-
             for (int i = 0; i < timer; i++)
             {
                 Console.Write(".");

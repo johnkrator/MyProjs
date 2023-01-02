@@ -42,14 +42,14 @@
         <Compile Include="App\Controller.cs" />
         <Compile Include="App\Program.cs" />
         <Compile Include="Domain\Entities\UserAccount.cs" />
+        <Compile Include="Domain\Enums\UserActions.cs" />
+        <Compile Include="Domain\Enums\UserOptions.cs" />
         <Compile Include="Domain\Interfaces\IUserLogin.cs" />
+        <Compile Include="Domain\Interfaces\IUserPrivileges.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="UI\AppScreen.cs" />
         <Compile Include="UI\Utility.cs" />
         <Compile Include="UI\Validator.cs" />
-    </ItemGroup>
-    <ItemGroup>
-      <Folder Include="Domain\Enums" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
