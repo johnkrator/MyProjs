@@ -329,18 +329,20 @@ namespace ConsoleMusicPlayer.App
                 _songs[n] = value;
             }
 
+            Console.WriteLine("Your songs: ");
             foreach (var song in _songs)
             {
-                Console.WriteLine(song);
+                Console.WriteLine($"-> {song}");
             }
         }
 
         public void DisplaySongsInAlphabeticalOrder()
         {
+            Console.WriteLine("Your songs: ");
             _songs.Sort();
             foreach (var song in _songs)
             {
-                Console.WriteLine(song);
+                Console.WriteLine($"-> {song}");
             }
         }
     }
