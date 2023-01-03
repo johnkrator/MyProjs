@@ -318,14 +318,26 @@ namespace ConsoleMusicPlayer.App
 
         public void ShuffleSongsOnPlaylist()
         {
+            Random random = new Random();
+            int n = _songs.Count;
+            while (n > 1)
+            {
+                n--;
+                int k = random.Next(n + 1);
+                string value = _songs[k];
+                _songs[k] = _songs[n];
+                _songs[n] = value;
+            }
+
             foreach (var song in _songs)
             {
-                Console.WriteLine(song.Reverse());
+                Console.WriteLine(song);
             }
         }
 
         public void DisplaySongsInAlphabeticalOrder()
         {
+            _songs.Sort();
             foreach (var song in _songs)
             {
                 Console.WriteLine(song);
