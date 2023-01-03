@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using ConsoleMusicPlayer.Domain.Entities;
 using ConsoleMusicPlayer.Domain.Enums;
 using ConsoleMusicPlayer.Domain.Interfaces;
@@ -7,12 +8,13 @@ using ConsoleMusicPlayer.UI;
 
 namespace ConsoleMusicPlayer.App
 {
-    public class Controller : UserAccount, IUserLogin, IUserPrivileges, ISongsGenre
+    public class Controller : UserAccount, IUserLogin, IUserPrivileges, ISongsGenre, IPlaylistDisplayOrder
     {
         private List<UserAccount> _userAccountList;
         private UserAccount _selectedAccount;
         private List<string> _songs = new List<string>();
         private List<string> _songsGenre = new List<string>();
+        private static Random _random = new Random();
 
         public void Run()
         {
@@ -100,6 +102,12 @@ namespace ConsoleMusicPlayer.App
                     break;
                 case (int)UserOptions.ViewPlaylist:
                     DisplayPlayList();
+                    break;
+                case (int)UserOptions.ShufflePlaylist:
+                    ShuffleSongsOnPlaylist();
+                    break;
+                case (int)UserOptions.DisplayPlaylistInAlphabeticalOrder:
+                    DisplaySongsInAlphabeticalOrder();
                     break;
                 case (int)UserOptions.Logout:
                     AppScreen.LogoutProgress();
@@ -305,6 +313,22 @@ namespace ConsoleMusicPlayer.App
             foreach (var song in _songsGenre)
             {
                 Console.WriteLine($"-> {song}");
+            }
+        }
+
+        public void ShuffleSongsOnPlaylist()
+        {
+            foreach (var song in _songs)
+            {
+                Console.WriteLine(song.Reverse());
+            }
+        }
+
+        public void DisplaySongsInAlphabeticalOrder()
+        {
+            foreach (var song in _songs)
+            {
+                Console.WriteLine(song);
             }
         }
     }

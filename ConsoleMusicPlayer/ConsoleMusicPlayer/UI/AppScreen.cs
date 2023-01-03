@@ -44,7 +44,9 @@ namespace ConsoleMusicPlayer.UI
             Console.WriteLine("1. User Action");
             Console.WriteLine("2. Create a Playlist");
             Console.WriteLine("3. View Playlist");
-            Console.WriteLine("4. Logout");
+            Console.WriteLine("4. Display Shuffled Playlist");
+            Console.WriteLine("5. Display Playlist in Alphabetical Order");
+            Console.WriteLine("6. Logout");
             Console.WriteLine("");
         }
 

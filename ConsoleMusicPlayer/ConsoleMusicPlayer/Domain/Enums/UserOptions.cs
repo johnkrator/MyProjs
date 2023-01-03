@@ -5,6 +5,8 @@ namespace ConsoleMusicPlayer.Domain.Enums
         UserAction = 1,
         CreatePlaylist,
         ViewPlaylist,
+        ShufflePlaylist,
+        DisplayPlaylistInAlphabeticalOrder,
         Logout
     }
 }
