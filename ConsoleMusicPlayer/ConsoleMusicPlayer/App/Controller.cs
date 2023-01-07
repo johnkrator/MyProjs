@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using ConsoleMusicPlayer.Domain.Entities;
 using ConsoleMusicPlayer.Domain.Enums;
 using ConsoleMusicPlayer.Domain.Interfaces;
