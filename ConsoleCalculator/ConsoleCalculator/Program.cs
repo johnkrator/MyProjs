@@ -1,1 +1,4 @@
-﻿Console.WriteLine("Hello, World!");
+﻿using BLL;
+
+Controller controller = new Controller();
+controller.Run();
