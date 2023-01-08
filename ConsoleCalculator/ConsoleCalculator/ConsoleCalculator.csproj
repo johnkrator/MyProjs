@@ -7,4 +7,13 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Reference Include="BLL">
+        <HintPath>..\BLL\bin\Debug\net6.0\BLL.dll</HintPath>
+      </Reference>
+      <Reference Include="UI">
+        <HintPath>..\UI\bin\Debug\net6.0\UI.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
 </Project>
