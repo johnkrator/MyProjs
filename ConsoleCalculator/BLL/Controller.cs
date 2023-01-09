@@ -48,7 +48,7 @@ public class Controller : IOperations
         }
     }
 
-    // Interface logic
+    // Interface logic implementation
     public void Addition()
     {
         Console.WriteLine("\nPICK TWO NUMBERS TO ADD");
