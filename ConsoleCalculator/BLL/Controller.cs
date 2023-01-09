@@ -11,7 +11,10 @@ public class Controller : Operation, IOperations
     {
         AppScreen.WelcomeScreen();
         Utility.PressEnterToContinue();
-        GetUserAction();
+        while (true)
+        {
+            GetUserAction();
+        }
     }
 
     public static void GetUserAction()
@@ -20,22 +23,24 @@ public class Controller : Operation, IOperations
         switch (Validator.Convert<int>("an option: "))
         {
             case (int)OperationTypes.Addition:
-                Console.WriteLine("Addition");
+                Console.WriteLine("Hello Addition");
                 break;
             case (int)OperationTypes.Subtraction:
-                Console.WriteLine("Subtraction");
+                Console.WriteLine("Hello Subtraction");
                 break;
             case (int)OperationTypes.Multiplication:
-                Console.WriteLine("Multiplication");
+                Console.WriteLine("Hello Multiplication");
                 break;
             case (int)OperationTypes.Division:
-                Console.WriteLine("Division");
+                Console.WriteLine("Hello Division");
                 break;
             case (int)OperationTypes.SquareRoot:
-                Console.WriteLine("SquareRoot");
+                Console.WriteLine("Hello SquareRoot");
                 break;
             case (int)OperationTypes.Exit:
-                Utility.PrintMessage("Exiting was successful", true);
+                Utility.PrintDotAnimation();
+                Utility.PrintMessage("\nExiting was successful", true);
+                // Run();
                 break;
             default:
                 Utility.PrintMessage("Invalid Option. Please try again.", false);
@@ -46,26 +51,57 @@ public class Controller : Operation, IOperations
     // Interface logic
     public void Addition()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Enter first number: ");
+        var a = double.Parse(Console.ReadLine());
+
+        Console.WriteLine("Enter second number: ");
+        var b = double.Parse(Console.ReadLine());
+        Console.WriteLine($"\n\tResult:--> {a + b}");
     }
 
     public void Subtraction()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Enter first number: ");
+        var a = double.Parse(Console.ReadLine());
+
+        Console.WriteLine("Enter second number: ");
+        var b = double.Parse(Console.ReadLine());
+        Console.WriteLine($"\n\tResult:--> {a - b}");
     }
 
     public void Multiplication()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Enter first number: ");
+        var a = double.Parse(Console.ReadLine());
+
+        Console.WriteLine("Enter second number: ");
+        var b = double.Parse(Console.ReadLine());
+        Console.WriteLine($"\n\tResult:--> {a * b}");
     }
 
     public void Division()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Enter first number: ");
+        var a = double.Parse(Console.ReadLine());
+
+        Console.WriteLine("Enter second number: ");
+        var b = double.Parse(Console.ReadLine());
+        if (b == 0)
+        {
+            throw new DivideByZeroException();
+        }
+
+        Console.WriteLine($"\n\tResult:--> {a / b}");
     }
 
     public void SquareRoot()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Enter first number: ");
+        var a = double.Parse(Console.ReadLine());
+
+        Console.WriteLine("Enter second number: ");
+        var b = double.Parse(Console.ReadLine());
+        // return a * *b;
+        // Console.WriteLine($"\n\tResult:--> {a ** b}");
     }
 }

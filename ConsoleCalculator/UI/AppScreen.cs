@@ -11,7 +11,6 @@ public class AppScreen
 
     public static void DisplayUserAction()
     {
-        Console.Clear();
         Console.WriteLine("\nChoose what operation to perform: ");
         Console.WriteLine("1. Addition\n2. Subtraction\n3. Multiplication\n4. Division\n5. SquareRoot\n6. Exit");
     }
