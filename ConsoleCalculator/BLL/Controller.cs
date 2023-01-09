@@ -101,12 +101,11 @@ public class Controller : IOperations
     public void SquareRoot()
     {
         Console.WriteLine("\nPICK A NUMBER TO GET IT'S SQUARE ROOT");
-        Console.Write("Enter first number: ");
+        Console.Write("Enter number: ");
         var a = double.Parse(Console.ReadLine());
 
-        Console.Write("Enter second number: ");
-        var b = double.Parse(Console.ReadLine());
-        // return a * *b;
-        // Console.WriteLine($"\n\tResult:--> {a ** b}");
+        var b = Math.Sqrt(a);
+
+        Console.WriteLine($"\n\tResult:--> {b}");
     }
 }
