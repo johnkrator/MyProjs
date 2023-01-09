@@ -1,6 +1,6 @@
 namespace UI;
 
-public class Utility
+public static class Utility
 {
     public static void PressEnterToContinue()
     {
