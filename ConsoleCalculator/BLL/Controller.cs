@@ -5,7 +5,7 @@ using UI;
 
 namespace BLL;
 
-public class Controller : Operation, IOperations
+public class Controller : IOperations
 {
     public void Run()
     {
@@ -17,30 +17,31 @@ public class Controller : Operation, IOperations
         }
     }
 
-    public static void GetUserAction()
+    public void GetUserAction()
     {
         AppScreen.DisplayUserAction();
         switch (Validator.Convert<int>("an option: "))
         {
             case (int)OperationTypes.Addition:
-                Console.WriteLine("Hello Addition");
+                Addition();
                 break;
             case (int)OperationTypes.Subtraction:
-                Console.WriteLine("Hello Subtraction");
+                Subtraction();
                 break;
             case (int)OperationTypes.Multiplication:
-                Console.WriteLine("Hello Multiplication");
+                Multiplication();
                 break;
             case (int)OperationTypes.Division:
-                Console.WriteLine("Hello Division");
+                Division();
                 break;
             case (int)OperationTypes.SquareRoot:
-                Console.WriteLine("Hello SquareRoot");
+                SquareRoot();
                 break;
             case (int)OperationTypes.Exit:
+                Utility.LogoutProcess();
                 Utility.PrintDotAnimation();
                 Utility.PrintMessage("\nExiting was successful", true);
-                // Run();
+                Run();
                 break;
             default:
                 Utility.PrintMessage("Invalid Option. Please try again.", false);
@@ -51,40 +52,44 @@ public class Controller : Operation, IOperations
     // Interface logic
     public void Addition()
     {
-        Console.WriteLine("Enter first number: ");
+        Console.WriteLine("\nPICK TWO NUMBERS TO ADD");
+        Console.Write("Enter first number: ");
         var a = double.Parse(Console.ReadLine());
 
-        Console.WriteLine("Enter second number: ");
+        Console.Write("Enter second number: ");
         var b = double.Parse(Console.ReadLine());
         Console.WriteLine($"\n\tResult:--> {a + b}");
     }
 
     public void Subtraction()
     {
-        Console.WriteLine("Enter first number: ");
+        Console.WriteLine("\nPICK TWO NUMBERS TO SUBTRACT");
+        Console.Write("Enter first number: ");
         var a = double.Parse(Console.ReadLine());
 
-        Console.WriteLine("Enter second number: ");
+        Console.Write("Enter second number: ");
         var b = double.Parse(Console.ReadLine());
         Console.WriteLine($"\n\tResult:--> {a - b}");
     }
 
     public void Multiplication()
     {
-        Console.WriteLine("Enter first number: ");
+        Console.WriteLine("\nPICK TWO NUMBERS TO MULTIPLY");
+        Console.Write("Enter first number: ");
         var a = double.Parse(Console.ReadLine());
 
-        Console.WriteLine("Enter second number: ");
+        Console.Write("Enter second number: ");
         var b = double.Parse(Console.ReadLine());
         Console.WriteLine($"\n\tResult:--> {a * b}");
     }
 
     public void Division()
     {
-        Console.WriteLine("Enter first number: ");
+        Console.WriteLine("\nPICK TWO NUMBERS TO DIVIDE");
+        Console.Write("Enter first number: ");
         var a = double.Parse(Console.ReadLine());
 
-        Console.WriteLine("Enter second number: ");
+        Console.Write("Enter second number: ");
         var b = double.Parse(Console.ReadLine());
         if (b == 0)
         {
@@ -96,10 +101,11 @@ public class Controller : Operation, IOperations
 
     public void SquareRoot()
     {
-        Console.WriteLine("Enter first number: ");
+        Console.WriteLine("\nPICK A NUMBER TO GET IT'S SQUARE ROOT");
+        Console.Write("Enter first number: ");
         var a = double.Parse(Console.ReadLine());
 
-        Console.WriteLine("Enter second number: ");
+        Console.Write("Enter second number: ");
         var b = double.Parse(Console.ReadLine());
         // return a * *b;
         // Console.WriteLine($"\n\tResult:--> {a ** b}");

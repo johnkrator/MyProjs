@@ -10,7 +10,7 @@ public class Utility
 
     public static string GetUserInput(string prompt)
     {
-        Console.Write($"Enter {prompt}");
+        Console.Write($"\nEnter {prompt}");
         return Console.ReadLine();
     }
 
@@ -37,5 +37,11 @@ public class Utility
             Console.Write(".");
             Thread.Sleep(200);
         }
+    }
+
+    public static void LogoutProcess()
+    {
+        Console.Clear();
+        Console.WriteLine("Logging out");
     }
 }
