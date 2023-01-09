@@ -8,11 +8,17 @@
     ".NETCoreApp,Version=v6.0": {
       "ConsoleCalculator/1.0.0": {
         "dependencies": {
+          "Domain": "1.0.0",
           "BLL": "1.0.0.0",
           "UI": "1.0.0.0"
         },
         "runtime": {
           "ConsoleCalculator.dll": {}
+        }
+      },
+      "Domain/1.0.0": {
+        "runtime": {
+          "Domain.dll": {}
         }
       },
       "BLL/1.0.0.0": {
@@ -35,6 +41,11 @@
   },
   "libraries": {
     "ConsoleCalculator/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

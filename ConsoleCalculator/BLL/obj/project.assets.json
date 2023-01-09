@@ -2,9 +2,22 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Domain.dll": {}
+        }
+      },
       "UI/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Domain": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/UI.dll": {}
         },
@@ -15,6 +28,11 @@
     }
   },
   "libraries": {
+    "Domain/1.0.0": {
+      "type": "project",
+      "path": "../Domain/Domain.csproj",
+      "msbuildProject": "../Domain/Domain.csproj"
+    },
     "UI/1.0.0": {
       "type": "project",
       "path": "../UI/UI.csproj",
@@ -23,6 +41,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "Domain >= 1.0.0",
       "UI >= 1.0.0"
     ]
   },
@@ -53,6 +72,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "C:\\Users\\John\\Documents\\JUST PRACTICE\\MY PROJECTS\\ConsoleCalculator\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\John\\Documents\\JUST PRACTICE\\MY PROJECTS\\ConsoleCalculator\\Domain\\Domain.csproj"
+            },
             "C:\\Users\\John\\Documents\\JUST PRACTICE\\MY PROJECTS\\ConsoleCalculator\\UI\\UI.csproj": {
               "projectPath": "C:\\Users\\John\\Documents\\JUST PRACTICE\\MY PROJECTS\\ConsoleCalculator\\UI\\UI.csproj"
             }

@@ -18,3 +18,5 @@ C:\Users\John\Documents\JUST PRACTICE\MY PROJECTS\ConsoleCalculator\ConsoleCalcu
 C:\Users\John\Documents\JUST PRACTICE\MY PROJECTS\ConsoleCalculator\ConsoleCalculator\obj\Debug\net6.0\ConsoleCalculator.pdb
 C:\Users\John\Documents\JUST PRACTICE\MY PROJECTS\ConsoleCalculator\ConsoleCalculator\obj\Debug\net6.0\ConsoleCalculator.genruntimeconfig.cache
 C:\Users\John\Documents\JUST PRACTICE\MY PROJECTS\ConsoleCalculator\ConsoleCalculator\obj\Debug\net6.0\ref\ConsoleCalculator.dll
+C:\Users\John\Documents\JUST PRACTICE\MY PROJECTS\ConsoleCalculator\ConsoleCalculator\bin\Debug\net6.0\Domain.dll
+C:\Users\John\Documents\JUST PRACTICE\MY PROJECTS\ConsoleCalculator\ConsoleCalculator\bin\Debug\net6.0\Domain.pdb
