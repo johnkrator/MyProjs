@@ -1,1 +1,4 @@
-﻿Console.WriteLine("Hello, World!");
+﻿using ConsoleSchoolManagementSystem;
+
+Controller controller = new Controller();
+controller.Run();
