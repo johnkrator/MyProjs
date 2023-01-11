@@ -6,6 +6,6 @@ public class UserAuthService : IUserAuth
 {
     public void Login()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Welcome back james...");
     }
 }
