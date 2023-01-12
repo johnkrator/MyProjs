@@ -23,6 +23,7 @@ public class AppScreen
         temporaryAccountUser.LastName = Validator.Convert<string>("your last name: ");
         temporaryAccountUser.MiddleName = Validator.Convert<string>("your middle name: ");
         temporaryAccountUser.Password = Convert.ToInt32(Utility.GetSecretUserInput("your password: "));
+        Console.WriteLine("");
         return temporaryAccountUser;
     }
 
