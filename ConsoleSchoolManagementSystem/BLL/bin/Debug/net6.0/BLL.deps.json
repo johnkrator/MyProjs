@@ -7,14 +7,41 @@
   "targets": {
     ".NETCoreApp,Version=v6.0": {
       "BLL/1.0.0": {
+        "dependencies": {
+          "DATA": "1.0.0",
+          "UI": "1.0.0"
+        },
         "runtime": {
           "BLL.dll": {}
+        }
+      },
+      "DATA/1.0.0": {
+        "runtime": {
+          "DATA.dll": {}
+        }
+      },
+      "UI/1.0.0": {
+        "dependencies": {
+          "DATA": "1.0.0"
+        },
+        "runtime": {
+          "UI.dll": {}
         }
       }
     }
   },
   "libraries": {
     "BLL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DATA/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "UI/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

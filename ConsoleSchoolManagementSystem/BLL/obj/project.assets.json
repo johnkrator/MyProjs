@@ -1,11 +1,49 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "DATA/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/DATA.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DATA.dll": {}
+        }
+      },
+      "UI/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "DATA": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/UI.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/UI.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "DATA/1.0.0": {
+      "type": "project",
+      "path": "../DATA/DATA.csproj",
+      "msbuildProject": "../DATA/DATA.csproj"
+    },
+    "UI/1.0.0": {
+      "type": "project",
+      "path": "../UI/UI.csproj",
+      "msbuildProject": "../UI/UI.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "DATA >= 1.0.0",
+      "UI >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\John\\.nuget\\packages\\": {}
@@ -33,7 +71,14 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\John\\Documents\\JUST PRACTICE\\MY PROJECTS\\ConsoleSchoolManagementSystem\\DATA\\DATA.csproj": {
+              "projectPath": "C:\\Users\\John\\Documents\\JUST PRACTICE\\MY PROJECTS\\ConsoleSchoolManagementSystem\\DATA\\DATA.csproj"
+            },
+            "C:\\Users\\John\\Documents\\JUST PRACTICE\\MY PROJECTS\\ConsoleSchoolManagementSystem\\UI\\UI.csproj": {
+              "projectPath": "C:\\Users\\John\\Documents\\JUST PRACTICE\\MY PROJECTS\\ConsoleSchoolManagementSystem\\UI\\UI.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

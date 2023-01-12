@@ -7,9 +7,9 @@ public class Controller : UserAuthService
 {
     public void Run()
     {
-        AppScreen.WelcomeScreen();
+        AppScreen.Welcome();
         Utility.PressEnterToContinue();
 
-        Login();
+        CheckUserDetails();
     }
 }

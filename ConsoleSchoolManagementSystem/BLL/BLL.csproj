@@ -7,4 +7,9 @@
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\DATA\DATA.csproj" />
+      <ProjectReference Include="..\UI\UI.csproj" />
+    </ItemGroup>
+
 </Project>

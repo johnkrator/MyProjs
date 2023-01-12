@@ -10,3 +10,8 @@ C:\Users\John\Documents\JUST PRACTICE\MY PROJECTS\ConsoleSchoolManagementSystem\
 C:\Users\John\Documents\JUST PRACTICE\MY PROJECTS\ConsoleSchoolManagementSystem\BLL\obj\Debug\net6.0\refint\BLL.dll
 C:\Users\John\Documents\JUST PRACTICE\MY PROJECTS\ConsoleSchoolManagementSystem\BLL\obj\Debug\net6.0\BLL.pdb
 C:\Users\John\Documents\JUST PRACTICE\MY PROJECTS\ConsoleSchoolManagementSystem\BLL\obj\Debug\net6.0\ref\BLL.dll
+C:\Users\John\Documents\JUST PRACTICE\MY PROJECTS\ConsoleSchoolManagementSystem\BLL\bin\Debug\net6.0\DATA.dll
+C:\Users\John\Documents\JUST PRACTICE\MY PROJECTS\ConsoleSchoolManagementSystem\BLL\bin\Debug\net6.0\UI.dll
+C:\Users\John\Documents\JUST PRACTICE\MY PROJECTS\ConsoleSchoolManagementSystem\BLL\bin\Debug\net6.0\DATA.pdb
+C:\Users\John\Documents\JUST PRACTICE\MY PROJECTS\ConsoleSchoolManagementSystem\BLL\bin\Debug\net6.0\UI.pdb
+C:\Users\John\Documents\JUST PRACTICE\MY PROJECTS\ConsoleSchoolManagementSystem\BLL\obj\Debug\net6.0\BLL.csproj.CopyComplete
