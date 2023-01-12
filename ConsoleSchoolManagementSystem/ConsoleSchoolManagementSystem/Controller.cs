@@ -9,6 +9,9 @@ public class Controller : UserAuthService
     {
         AppScreen.Welcome();
         Utility.PressEnterToContinue();
+        UserAuthService userAuthService = new UserAuthService();
+        userAuthService.InitializedData();
+        userAuthService.RunServices();
 
         CheckUserDetails();
     }

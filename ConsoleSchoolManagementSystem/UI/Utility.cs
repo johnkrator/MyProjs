@@ -39,6 +39,8 @@ public class Utility
             Console.Write(".");
             Thread.Sleep(200);
         }
+
+        Console.Clear();
     }
 
     public static string GetSecretUserInput(string prompt)
@@ -48,7 +50,7 @@ public class Utility
         StringBuilder input = new StringBuilder();
         while (true)
         {
-            if (isPrompt) Console.WriteLine(prompt);
+            if (isPrompt) Console.Write(prompt);
             isPrompt = false;
             ConsoleKeyInfo inputKey = Console.ReadKey(true);
 

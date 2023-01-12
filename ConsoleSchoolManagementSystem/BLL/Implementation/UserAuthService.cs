@@ -6,27 +6,40 @@ namespace BLL.Implementation;
 
 public class UserAuthService : IUserAuth
 {
-    private List<UserAuth> _userAuthList;
-    private UserAuth _selectedUserAccount;
+    private List<UserAccount> _userAccountList;
+    private UserAccount _selectedUserAccount;
     private List<OperationsService> _listOfOperationsServices;
+
+    public void RunServices()
+    {
+        if (_selectedUserAccount != null)
+        {
+            WelcomeUser(_selectedUserAccount.FirstName);
+        }
+    }
+
+    public void WelcomeUser(string fullName)
+    {
+        Console.Clear();
+        Console.WriteLine($"Welcome back, {fullName}");
+        Utility.PressEnterToContinue();
+    }
 
     public void InitializedData()
     {
-        _userAuthList = new List<UserAuth>
+        _userAccountList = new List<UserAccount>
         {
-            new UserAuth
+            new UserAccount
             {
-                Id = 1, FirstName = "James", LastName = "Oma", MiddleName = "Kendrick", Password = 1122,
-                IsLocked = true
+                Id = 1, FirstName = "James", LastName = "Oma", MiddleName = "Kendrick", Password = 1122, IsLocked = true
             },
-            new UserAuth
+            new UserAccount
             {
                 Id = 2, FirstName = "Phil", LastName = "Jones", MiddleName = "Kush", Password = 1111, IsLocked = true
             },
-            new UserAuth
+            new UserAccount
             {
-                Id = 3, FirstName = "Amaka", LastName = "Hope", MiddleName = "Ngozi", Password = 2222,
-                IsLocked = false
+                Id = 3, FirstName = "Amaka", LastName = "Hope", MiddleName = "Ngozi", Password = 2222, IsLocked = false
             }
         };
         _listOfOperationsServices = new List<OperationsService>();
@@ -37,23 +50,38 @@ public class UserAuthService : IUserAuth
         bool isCorrectLogin = false;
         while (isCorrectLogin == false)
         {
-            UserAuth userInputAccount = AppScreen.UserLoginForm();
+            UserAccount userInputAccount = AppScreen.UserLoginForm();
             AppScreen.ShowLoginProgress();
-            foreach (UserAuth account in _userAuthList)
+            if (_userAccountList != null)
             {
-                _selectedUserAccount = account;
-                if (userInputAccount.FirstName.Equals(_selectedUserAccount.FirstName))
+                foreach (UserAccount account in _userAccountList)
                 {
                     _selectedUserAccount = account;
-                    if (_selectedUserAccount.IsLocked || _selectedUserAccount.TotalLogin > 3)
+                    if (userInputAccount.FirstName.Equals(_selectedUserAccount.FirstName))
                     {
-                        AppScreen.PrintLockScreen();
-                    }
-                    else
-                    {
-                        _selectedUserAccount.TotalLogin = 0;
-                        isCorrectLogin = true;
-                        break;
+                        _selectedUserAccount.TotalLogin++;
+                        if (userInputAccount.LastName.Equals(_selectedUserAccount.LastName))
+                        {
+                            _selectedUserAccount.TotalLogin++;
+                            if (userInputAccount.MiddleName.Equals(_selectedUserAccount.MiddleName))
+                            {
+                                _selectedUserAccount.TotalLogin++;
+                                if (userInputAccount.Password.Equals(_selectedUserAccount.Password))
+                                {
+                                    _selectedUserAccount = account;
+                                    if (_selectedUserAccount.IsLocked || _selectedUserAccount.TotalLogin > 3)
+                                    {
+                                        AppScreen.PrintLockScreen();
+                                    }
+                                    else
+                                    {
+                                        _selectedUserAccount.TotalLogin = 0;
+                                        isCorrectLogin = true;
+                                        break;
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -61,7 +89,7 @@ public class UserAuthService : IUserAuth
 
         if (isCorrectLogin == false)
         {
-            Utility.PrintMessage("Invalid name or password", false);
+            Utility.PrintMessage("\nInvalid name or password", false);
             _selectedUserAccount.IsLocked = _selectedUserAccount.TotalLogin == 3;
             if (_selectedUserAccount.IsLocked)
             {

@@ -1,8 +1,4 @@
-﻿using BLL.Implementation;
-using ConsoleSchoolManagementSystem;
-
-UserAuthService userAuthService = new UserAuthService();
-userAuthService.InitializedData();
+﻿using ConsoleSchoolManagementSystem;
 
 Controller controller = new Controller();
 controller.Run();

@@ -16,13 +16,13 @@ public class AppScreen
         Utility.PrintDotAnimation();
     }
 
-    public static UserAuth UserLoginForm()
+    public static UserAccount UserLoginForm()
     {
-        UserAuth temporaryAccountUser = new UserAuth();
+        UserAccount temporaryAccountUser = new UserAccount();
         temporaryAccountUser.FirstName = Validator.Convert<string>("your first name: ");
         temporaryAccountUser.LastName = Validator.Convert<string>("your last name: ");
         temporaryAccountUser.MiddleName = Validator.Convert<string>("your middle name: ");
-        temporaryAccountUser.Password = Validator.Convert<long>("your password: ");
+        temporaryAccountUser.Password = Convert.ToInt32(Utility.GetSecretUserInput("your password: "));
         return temporaryAccountUser;
     }
 
