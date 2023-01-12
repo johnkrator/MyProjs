@@ -6,7 +6,7 @@ public static class Validator
 {
     public static T Convert<T>(string prompt)
     {
-        bool valid = false;
+        var valid = false;
         string userInput;
 
         while (!valid)
